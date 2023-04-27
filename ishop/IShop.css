@@ -1,0 +1,35 @@
+body {
+	margin-left: 30px;
+}
+
+.ShopCaption {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 35px;
+	color: #696969;
+	margin-bottom: 10px;
+}
+
+.IShop {
+	border: 1px solid #D3D3D3;
+}
+
+thead {
+	font-size: 19px;
+}
+
+th {
+	padding: 0 5px 0 5px;
+}
+
+.IShop td {
+	border: 1px solid #D3D3D3;
+	vertical-align: middle;
+	padding: 0 5px 0 5px;
+	text-align: center;
+}
+
+img {
+	width: 50%;
+}
+
