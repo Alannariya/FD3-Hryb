@@ -1,0 +1,22 @@
+.FilterFraem
+{
+	margin: 20px;
+}
+
+.FilterFraem .F-Text 
+{
+width: 150px;
+height: 100px;
+margin-top: 10px;
+border: solid 1px black;
+padding: 20px;
+font-size: 20px;
+overflow-y:scroll;
+
+}
+
+
+.F-Checkbox, .F-Input,  .F-Reset
+ {
+margin-right: 10px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <meta charset="utf-8" />
+  <title>ishop</title>
+</head> 
+<body> 
+  <div id="container"></div> 
+      
+  <script src="https://unpkg.com/react@15/dist/react.js"></script> 
+  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+      
+  <script src="IShop.js"></script>
+	<script src="Product.js"></script>
+  <link rel="stylesheet" type="text/css" href="IShop.css" />
+
+  <script>
+
+    var nameShop='Bijouterie';
+		var tHeadArr=[
+			{
+			id: 1,
+			head:'Title'
+			},
+			{
+			id: 2,
+			head:'Product image'
+			},
+			{
+			id: 3,
+			head:'Price'
+		  },
+			{
+			id: 4,
+			head:'Count'
+			},
+			{
+			id: 5,
+			head:'Control'
+		}
+		];
+
+    var itemsArr=[ 
+      {
+			 id: 10,
+			 title:'Earrings',
+			 img:'./img/1.webp',
+			 price:49.99,
+			 count: 15,
+			 control:'Delete'
+			}, 
+      {
+			 id: 20,
+			 title:'Ring',
+			 img:'./img/2.webp',
+			 price:35.00,
+			 count: 8,
+			 control:'Delete'
+			},
+			{
+			 id: 30,
+			 title:'Necklace',
+			 img:'./img/3.webp',
+			 price:140.00,
+			 count: 11,
+			 control:'Delete'
+			},
+			{
+			 id: 40,
+			 title:'Bracelet',
+			 img:'./img/4.webp',
+			 price:70.00,
+			 count: 17,
+			 control:'Delete'
+			},
+			{
+			 id: 50,
+			 title:'Earrings "Bery"',
+			 img:'./img/5.webp',
+			 price:65.00,
+			 count: 21,
+			 control:'Delete'
+			},
+			{
+			 id: 60,
+			 title:'Brooch',
+			 img:'./img/6.webp',
+			 price:59.99,
+			 count: 10,
+			 control:'Delete'
+			},
+    ];
+
+    ReactDOM.render(
+      React.createElement(IShop,{nameShop:nameShop,itemsArr:itemsArr,tHeadArr:tHeadArr}), 
+      document.getElementById('container') 
+    );
+
+  </script>
+
+</body> 
+</html>
