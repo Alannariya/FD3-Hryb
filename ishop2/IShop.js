@@ -1,19 +1,12 @@
+// 0-23.0
+
 var IShop = React.createClass({
 
   displayName: 'IShop',
 
 	propTypes: {
     nameShop: React.PropTypes.string.isRequired, 
-    itemsArr:React.PropTypes.arrayOf(
-      React.PropTypes.shape({
-        id: React.PropTypes.number.isRequired,
-				title: React.PropTypes.string.isRequired,
-				img: React.PropTypes.string.isRequired,
-				price: React.PropTypes.number.isRequired,
-        count: React.PropTypes.number.isRequired,
-        control:React.PropTypes.string.isRequired
-      })
-    ),
+    itemsArr:React.PropTypes.array.isRequired,
 		tHeadArr:React.PropTypes.arrayOf(
 			React.PropTypes.shape({
 				id: React.PropTypes.number.isRequired,
@@ -24,7 +17,8 @@ var IShop = React.createClass({
 
 	getInitialState: function() {
     return { 
-      itemSelected: null,
+      itemSelectedId: null,
+			currItemsArr: this.props.itemsArr,
     };
   },
 
@@ -33,15 +27,15 @@ var IShop = React.createClass({
     this.setState( {itemSelectedId:id} );
   },
 
-	deleteItem: function (deletedId) {
-		this.setState({ itemsArr: this.state.items.filter(item => item.id !== deletedId) });
+	deleteItem: function (id) {
+		this.setState({ currItemsArr: this.state.currItemsArr.filter(item => item.id !== id) });
 },
 
   render: function() {
 
-    var items = this.props.itemsArr.map( el =>
+    var items = this.state.currItemsArr.map( el =>
 			React.createElement(Product, {
-				key:el.id, title:el.title,img:el.img,price:el.price,count:el.count, control:el.control,
+				key:el.id, id:el.id, title:el.title,img:el.img,price:el.price,count:el.count, control:el.control,
 				itemSelectedId: this.state.itemSelectedId, cbDeleted: this.deleteItem,
 				cbSelected:this.itemSelected,
 			})

@@ -1,3 +1,4 @@
+// 23.0-49.0
 var Filter = React.createClass({
 
 	displayName: 'Filter',
@@ -13,9 +14,9 @@ var Filter = React.createClass({
 					inputText: '',
 			};
 	},
-
+ 
 	changelistArr() {
-			let changedText = this.props.listArr;
+			let changedText = this.props.listArr.slice();
 			if (this.state.inputText) {
 					changedText = changedText.filter(i => i.includes(this.state.inputText))
 			}

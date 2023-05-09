@@ -10,26 +10,28 @@ var Product = React.createClass({
         count: React.PropTypes.number.isRequired,
 				control:React.PropTypes.string.isRequired,
 				cbSelected: React.PropTypes.func.isRequired,
+				cbDeleted: React.PropTypes.func.isRequired,
 				itemSelectedId: React.PropTypes.number,
-				// cbDeleteItem: React.PropTypes.func.isRequired
   },
 
 
-itemClicked: function(EO) {
+itemClicked: function() {
 	this.props.cbSelected(this.props.id);
 },
 
-confirmDelete: function() {
-	confirm('Do you really want to delete?') ? this.deleteConfirmedItem() : null;
+deleteItem: function(EO){
+	this.props.cbDeleted(this.props.id);
+	EO.stopPropagation();
 },
 
-deleteConfirmedItem: function() {
-	this.props.cbDeleteItem(this.props.id);
+confirmDelete: function() {
+	confirm('Do you really want to delete?') ? this.deleteItem() : null;
 },
+
 
   render: function() {
 
-       return React.DOM.tr({key: this.props.id, onClick:this.itemSelected, className: ( (this.props.isSelected) ? 'ShopProductSelected' : null )},
+       return React.DOM.tr({key: this.props.id,  onClick:this.itemClicked, className:((this.props.itemSelectedId===this.props.id) ? 'ItemSelected' : null)}, 
 			 React.DOM.td({},this.props.title),
 			 React.DOM.td({className:'ItemImg'},
 				 React.DOM.img({src:this.props.img})),
