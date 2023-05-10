@@ -9,12 +9,12 @@ import Product from './Product';
 class IShop extends React.Component {
 
   static propTypes = {
-    nameShop: React.PropTypes.string.isRequired, 
-    itemsArr:React.PropTypes.array.isRequired,
-		tHeadArr:React.PropTypes.arrayOf(
-			React.PropTypes.shape({
-				id: React.PropTypes.number.isRequired,
-			  head: React.PropTypes.string.isRequired
+    nameShop: PropTypes.string.isRequired, 
+    itemsArr:PropTypes.array.isRequired,
+		tHeadArr:PropTypes.arrayOf(
+			PropTypes.shape({
+				id: PropTypes.number.isRequired,
+			  head: PropTypes.string.isRequired
 			})
 		)		
   };
@@ -46,7 +46,7 @@ class IShop extends React.Component {
       );
       
 		const hOfTable = this.props.tHeadArr.map( el =>
-			React.DOM.th({key:el.id,className:'ShopHead'}, el.head )
+			DOM.th({key:el.id,className:'ShopHead'}, el.head )
 		);
 		
 

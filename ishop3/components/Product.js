@@ -7,15 +7,15 @@ import './Product.css';
 class Product extends React.Component {
 
   static propTypes = {
-        id: React.PropTypes.number.isRequired,
-				title: React.PropTypes.string.isRequired,
-				img: React.PropTypes.string.isRequired,
-				price: React.PropTypes.number.isRequired,
-        count: React.PropTypes.number.isRequired,
-				control:React.PropTypes.string.isRequired,
-				cbSelected: React.PropTypes.func.isRequired,
-				cbDeleted: React.PropTypes.func.isRequired,
-				itemSelectedId: React.PropTypes.number,
+        id:PropTypes.number.isRequired,
+				title: PropTypes.string.isRequired,
+				img: PropTypes.string.isRequired,
+				price: PropTypes.number.isRequired,
+        count: PropTypes.number.isRequired,
+				control:PropTypes.string.isRequired,
+				cbSelected: PropTypes.func.isRequired,
+				cbDeleted: PropTypes.func.isRequired,
+				itemSelectedId: PropTypes.number,
   };
 
 

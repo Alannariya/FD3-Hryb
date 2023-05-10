@@ -670,11 +670,13 @@ var _IShop2 = _interopRequireDefault(_IShop);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var nameShop = 'Bijouterie';
 var itemsArr = __webpack_require__(29);
 var tHeadArr = __webpack_require__(30);
 
 // import itemsArr from './item.json'  2-ой способ записи
 // import tHeadArr from './head.json'
+
 
 _reactDom2.default.render(_react2.default.createElement(_IShop2.default, { nameShop: nameShop, itemsArr: itemsArr, tHeadArr: tHeadArr }), document.getElementById('container'));
 
@@ -30816,7 +30818,7 @@ var IShop = function (_React$Component) {
 						});
 
 						var hOfTable = this.props.tHeadArr.map(function (el) {
-								return _react2.default.DOM.th({ key: el.id, className: 'ShopHead' }, el.head);
+								return _reactDomFactories2.default.th({ key: el.id, className: 'ShopHead' }, el.head);
 						});
 
 						return _reactDomFactories2.default.table({ className: 'IShop' }, _reactDomFactories2.default.caption({ className: 'ShopCaption' }, this.props.nameShop), _reactDomFactories2.default.thead({ className: 'ShopHead' }, _reactDomFactories2.default.tr({}, hOfTable)), _reactDomFactories2.default.tbody({}, items));
@@ -30827,11 +30829,11 @@ var IShop = function (_React$Component) {
 }(_react2.default.Component);
 
 IShop.propTypes = {
-		nameShop: _react2.default.PropTypes.string.isRequired,
-		itemsArr: _react2.default.PropTypes.array.isRequired,
-		tHeadArr: _react2.default.PropTypes.arrayOf(_react2.default.PropTypes.shape({
-				id: _react2.default.PropTypes.number.isRequired,
-				head: _react2.default.PropTypes.string.isRequired
+		nameShop: _propTypes2.default.string.isRequired,
+		itemsArr: _propTypes2.default.array.isRequired,
+		tHeadArr: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+				id: _propTypes2.default.number.isRequired,
+				head: _propTypes2.default.string.isRequired
 		}))
 };
 exports.default = IShop;
@@ -31923,15 +31925,15 @@ var Product = function (_React$Component) {
 }(_react2.default.Component);
 
 Product.propTypes = {
-	id: _react2.default.PropTypes.number.isRequired,
-	title: _react2.default.PropTypes.string.isRequired,
-	img: _react2.default.PropTypes.string.isRequired,
-	price: _react2.default.PropTypes.number.isRequired,
-	count: _react2.default.PropTypes.number.isRequired,
-	control: _react2.default.PropTypes.string.isRequired,
-	cbSelected: _react2.default.PropTypes.func.isRequired,
-	cbDeleted: _react2.default.PropTypes.func.isRequired,
-	itemSelectedId: _react2.default.PropTypes.number
+	id: _propTypes2.default.number.isRequired,
+	title: _propTypes2.default.string.isRequired,
+	img: _propTypes2.default.string.isRequired,
+	price: _propTypes2.default.number.isRequired,
+	count: _propTypes2.default.number.isRequired,
+	control: _propTypes2.default.string.isRequired,
+	cbSelected: _propTypes2.default.func.isRequired,
+	cbDeleted: _propTypes2.default.func.isRequired,
+	itemSelectedId: _propTypes2.default.number
 };
 exports.default = Product;
 
