@@ -15,7 +15,7 @@ body {
 }
 
 .ItemSelected {
-	background-color: #31768883;
+	background-color: #ffea7110;
 }
 
 thead {
@@ -26,8 +26,23 @@ th {
 	padding: 0 5px 0 5px;
 }
 
-.IShop td {
-	border: 1px solid #637570;
+/* .IShop td {
+	border: 1px solid #D3D3D3;
+	vertical-align: middle;
+	padding: 0 5px 0 5px;
+	text-align: center;
+}
+
+img {
+	width: 50%;
+} */
+
+.ItemDeleteButton {
+background-color: #696969;
+color: white;
+}
+ td {
+	border: 1px solid #D3D3D3;
 	vertical-align: middle;
 	padding: 0 5px 0 5px;
 	text-align: center;
@@ -36,8 +51,4 @@ th {
 img {
 	width: 50%;
 }
-
-.ItemDeleteButton {
-background-color: #696969;
-color: white;
-}
+/*# sourceMappingURL=bundle.css.map*/

@@ -20,14 +20,11 @@ itemClicked: function() {
 },
 
 deleteItem: function(EO){
-	this.props.cbDeleted(this.props.id);
+	confirm('Do you really want to delete?') 
+	?	this.props.cbDeleted(this.props.id)
+	: null;
 	EO.stopPropagation();
 },
-
-confirmDelete: function() {
-	confirm('Do you really want to delete?') ? this.deleteItem() : null;
-},
-
 
   render: function() {
 
@@ -38,7 +35,7 @@ confirmDelete: function() {
 			 React.DOM.td({},`${this.props.price}\$`),
 			 React.DOM.td({},`${this.props.count}\ pieces`),
 			 React.DOM.td(null, 
-				React.DOM.input({type:'button', value:this.props.control, className:'ItemDeleteButton', onClick: this.confirmDelete}, null)
+				React.DOM.input({type:'button', value:this.props.control, className:'ItemDeleteButton', onClick: this.deleteItem}, null)
 					),
        )
 	}

@@ -1,0 +1,22 @@
+[
+	{
+	"id": 1,
+	"head":"'Title'"
+	},
+	{
+	"id": 2,
+	"head":"'Product image'"
+	},
+	{
+"id": 3,
+	"head":"'Price'"
+	},
+	{
+	"id": 4,
+	"head":"'Count'"
+	},
+	{
+	"id": 5,
+	"head":"'Control'"
+}
+]

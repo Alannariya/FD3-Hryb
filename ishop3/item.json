@@ -1,0 +1,50 @@
+[ 
+      {
+			 "id": 10,
+			 "title":"Earrings",
+			 "img":"./components/img/1.webp",
+			 "price":49.99,
+			 "count": 15,
+			 "control":"Delete"
+			}, 
+      {
+			 "id": 20,
+			 "title":"Ring",
+			 "img":"./components/img/2.webp",
+			 "price":35.00,
+			 "count": 8,
+			 "control":"Delete"
+			},
+			{
+			 "id": 30,
+			 "title":"Necklace",
+			 "img":"./components/img/3.webp",
+			 "price":140.00,
+			 "count": 11,
+			 "control":"Delete"
+			},
+			{
+			 "id": 40,
+			 "title":"Bracelet",
+			 "img":"./components/img/4.webp",
+			 "price":70.00,
+			 "count": 17,
+			 "control":"Delete"
+			},
+			{
+			 "id": 50,
+			 "title":"Earrings 'Bery'",
+			 "img":"./components/img/5.webp",
+			 "price":65.00,
+			 "count": 21,
+			 "control":"Delete"
+			},
+			{
+			 "id": 60,
+			 "title":"Brooch",
+			 "img":"./components/img/6.webp",
+			 "price":59.99,
+			 "count": 10,
+			 "control":"Delete"
+			}
+    ]
