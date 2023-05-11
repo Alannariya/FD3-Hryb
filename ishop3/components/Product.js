@@ -24,12 +24,13 @@ itemClicked= (EO) => {
 };
 
 deleteItem = (EO) => {
-	confirm('Do you really want to delete?') 
-	?	this.props.cbDeleted(this.props.id)
-	: null;
-	EO.stopPropagation();
+	 EO.stopPropagation();
+  if (confirm('Do you really want to delete?')) {
+    this.props.cbDeleted(this.props.id);
+  } else {
+    null;
+  }
 };
-
   render () {
 
        return DOM.tr({key: this.props.id,  onClick:this.itemClicked, className:((this.props.itemSelectedId===this.props.id) ? 'ItemSelected' : null)}, 

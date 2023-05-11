@@ -31864,7 +31864,7 @@ module.exports = function() {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+		value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -31892,48 +31892,52 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Product = function (_React$Component) {
-	_inherits(Product, _React$Component);
+		_inherits(Product, _React$Component);
 
-	function Product() {
-		var _ref;
+		function Product() {
+				var _ref;
 
-		var _temp, _this, _ret;
+				var _temp, _this, _ret;
 
-		_classCallCheck(this, Product);
+				_classCallCheck(this, Product);
 
-		for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
-			args[_key] = arguments[_key];
+				for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+						args[_key] = arguments[_key];
+				}
+
+				return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.itemClicked = function (EO) {
+						_this.props.cbSelected(_this.props.id);
+				}, _this.deleteItem = function (EO) {
+						EO.stopPropagation();
+						if (confirm('Do you really want to delete?')) {
+								_this.props.cbDeleted(_this.props.id);
+						} else {
+								null;
+						}
+				}, _temp), _possibleConstructorReturn(_this, _ret);
 		}
 
-		return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Product.__proto__ || Object.getPrototypeOf(Product)).call.apply(_ref, [this].concat(args))), _this), _this.itemClicked = function (EO) {
-			_this.props.cbSelected(_this.props.id);
-		}, _this.deleteItem = function (EO) {
-			confirm('Do you really want to delete?') ? _this.props.cbDeleted(_this.props.id) : null;
-			EO.stopPropagation();
-		}, _temp), _possibleConstructorReturn(_this, _ret);
-	}
+		_createClass(Product, [{
+				key: 'render',
+				value: function render() {
 
-	_createClass(Product, [{
-		key: 'render',
-		value: function render() {
+						return _reactDomFactories2.default.tr({ key: this.props.id, onClick: this.itemClicked, className: this.props.itemSelectedId === this.props.id ? 'ItemSelected' : null }, _reactDomFactories2.default.td({}, this.props.title), _reactDomFactories2.default.td({ className: 'ItemImg' }, _reactDomFactories2.default.img({ src: this.props.img })), _reactDomFactories2.default.td({}, this.props.price + '$'), _reactDomFactories2.default.td({}, this.props.count + ' pieces'), _reactDomFactories2.default.td(null, _reactDomFactories2.default.input({ type: 'button', value: this.props.control, className: 'ItemDeleteButton', onClick: this.deleteItem }, null)));
+				}
+		}]);
 
-			return _reactDomFactories2.default.tr({ key: this.props.id, onClick: this.itemClicked, className: this.props.itemSelectedId === this.props.id ? 'ItemSelected' : null }, _reactDomFactories2.default.td({}, this.props.title), _reactDomFactories2.default.td({ className: 'ItemImg' }, _reactDomFactories2.default.img({ src: this.props.img })), _reactDomFactories2.default.td({}, this.props.price + '$'), _reactDomFactories2.default.td({}, this.props.count + ' pieces'), _reactDomFactories2.default.td(null, _reactDomFactories2.default.input({ type: 'button', value: this.props.control, className: 'ItemDeleteButton', onClick: this.deleteItem }, null)));
-		}
-	}]);
-
-	return Product;
+		return Product;
 }(_react2.default.Component);
 
 Product.propTypes = {
-	id: _propTypes2.default.number.isRequired,
-	title: _propTypes2.default.string.isRequired,
-	img: _propTypes2.default.string.isRequired,
-	price: _propTypes2.default.number.isRequired,
-	count: _propTypes2.default.number.isRequired,
-	control: _propTypes2.default.string.isRequired,
-	cbSelected: _propTypes2.default.func.isRequired,
-	cbDeleted: _propTypes2.default.func.isRequired,
-	itemSelectedId: _propTypes2.default.number
+		id: _propTypes2.default.number.isRequired,
+		title: _propTypes2.default.string.isRequired,
+		img: _propTypes2.default.string.isRequired,
+		price: _propTypes2.default.number.isRequired,
+		count: _propTypes2.default.number.isRequired,
+		control: _propTypes2.default.string.isRequired,
+		cbSelected: _propTypes2.default.func.isRequired,
+		cbDeleted: _propTypes2.default.func.isRequired,
+		itemSelectedId: _propTypes2.default.number
 };
 exports.default = Product;
 
