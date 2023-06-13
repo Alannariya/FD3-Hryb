@@ -1,6 +1,6 @@
-body {
+/* body {
 	margin-left: 30px;
-}
+} */
 
 .ShopCaption {
 	text-transform: uppercase;
@@ -26,18 +26,9 @@ th {
 	padding: 0 5px 0 5px;
 }
 
-/* .IShop td {
-	border: 1px solid #D3D3D3;
-	vertical-align: middle;
-	padding: 0 5px 0 5px;
-	text-align: center;
+.btnNP {
+	margin-top: 10px;
+	border-radius: 5px;
+	padding: 5px;
 }
 
-img {
-	width: 50%;
-} */
-
-.ItemDeleteButton {
-background-color: #696969;
-color: white;
-}

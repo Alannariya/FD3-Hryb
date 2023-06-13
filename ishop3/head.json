@@ -1,22 +1,22 @@
 [
 	{
 	"id": 1,
-	"head":"'Title'"
+	"head":"Title"
 	},
 	{
 	"id": 2,
-	"head":"'Product image'"
+	"head":"Product image"
 	},
 	{
 "id": 3,
-	"head":"'Price'"
+	"head":"Price"
 	},
 	{
 	"id": 4,
-	"head":"'Count'"
+	"head":"Count"
 	},
 	{
 	"id": 5,
-	"head":"'Control'"
+	"head":"Control"
 }
 ]

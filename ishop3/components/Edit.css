@@ -1,0 +1,19 @@
+.EditCard  {
+	margin-left: 20px;
+}
+
+
+.EditCard input {
+	margin-left: 10px;
+}
+
+.btn{
+	border-radius: 5px;
+	padding: 5px;
+	margin-left: 7px;
+}
+
+.EditCard span {
+	margin-left: 10px;
+	color: red;
+}

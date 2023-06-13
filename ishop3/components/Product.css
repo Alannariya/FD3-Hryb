@@ -8,3 +8,25 @@
 img {
 	width: 50%;
 }
+
+.ItemButton{
+	margin:7px 7px 7px 0 ;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+/* .Title {
+	width: 65px;
+} */
+
+/* .ItemImg {
+	width: 220px;
+} */
+
+/* .Price {
+	width: 50px;
+}
+
+.Count {
+	width: 40px;
+} */
