@@ -1,0 +1,29 @@
+﻿.MobComp {
+	border-collapse: collapse;
+	border: 1px solid black;
+	text-align: center;
+}
+
+thead {
+	line-height: 2;
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	}
+
+tbody tr {
+	border: 1px solid black;
+}	
+
+tbody tr td {
+	padding: 10px;
+	text-align: left;
+}	
+
+.newBtn {
+  margin-top: 10px;
+}
+
+.fltrBtn input {
+  margin: 10px 5px 10px 0;
+}
