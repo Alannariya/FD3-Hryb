@@ -29,12 +29,14 @@ class Edit extends React.Component {
 		titleError: "",
 		priceError: "",
 		countError: "",
+		isSaveDisabled: true,
+		
 };
 
 validForm = () => {
 
 		const imgError = this.state.img ? null : "The product image link is incorrectly entered";
-		const titleError = this.state.title.length ? null : "Введите наименование продукта";
+		const titleError = this.state.title.length ? null : "Enter the product name";
 		const priceError = (isNaN(this.state.price)) || (this.state.price === "") ? "Please enter the correct price of the product" : null;
 		const countError = (isNaN(this.state.count)) || (this.state.count === "") ? "Please enter valid data" : null;
 
@@ -43,31 +45,44 @@ validForm = () => {
 }
 
 editTitle = (eo) => {
-		this.props.setDisabled();
-		this.setState({ title: eo.target.value }, this.validForm);
-}
+  this.props.setDisabled();
+  this.setState({ title: eo.target.value }, () => {
+    this.validForm();
+    this.setState({ isSaveDisabled: false }); 
+  });
+};
 
 editImg = (eo) => {
-		this.props.setDisabled();
-		this.setState({ img: eo.target.value }, this.validForm);
-}
+  this.props.setDisabled();
+  this.setState({ img: eo.target.value }, () => {
+    this.validForm();
+    this.setState({ isSaveDisabled: false }); 
+  });
+};
 
 editPrice = (eo) => {
-		this.props.setDisabled();
-		this.setState({ price: eo.target.value }, this.validForm);
-}
+  this.props.setDisabled();
+  this.setState({ price: eo.target.value }, () => {
+    this.validForm();
+    this.setState({ isSaveDisabled: false }); 
+  });
+};
 
 editCount = (eo) => {
-		this.props.setDisabled();
-		this.setState({ count: eo.target.value }, this.validForm);
-}
+  this.props.setDisabled();
+  this.setState({ count: eo.target.value }, () => {
+    this.validForm();
+    this.setState({ isSaveDisabled: false }); 
+  });
+};
 
 saveChanges = () => {
-	this.props.cbSave(this.props.item.id, { 
+	this.props.cbSave(this.props.item.id, {
 		title: this.state.title,
 		img: this.state.img,
 		price: this.state.price !== "" ? parseFloat(this.state.price) : 0,
-		count:parseFloat(this.state.count) ,});
+		count: parseFloat(this.state.count),
+	});
 };
 
 render() {
@@ -92,7 +107,7 @@ render() {
 								<span>{this.state.countError}</span>
 						</p>
 						<input className="btn" type="button" value="Save" 
-						       disabled={(!!(this.state.imgError || this.state.titleError || this.state.priceError || this.state.countError))} 
+						       disabled={this.state.isSaveDisabled} 
 									 onClick={this.saveChanges} />
 						<input className="btn" type="button" value="Cancel" onClick={() => this.props.changeMode()} />
 				</div>
@@ -108,3 +123,6 @@ render() {
 
 
 export default Edit;
+
+
+

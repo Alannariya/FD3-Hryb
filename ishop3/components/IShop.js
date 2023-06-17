@@ -162,7 +162,7 @@ cteateNewProduct = () => {
 						cbSave={this.saveEdit} 
 						changeMode={this.changeMode} 
 						setDisabled={this.setDisabled}
-						item={{id: this.state.newId , title: "", count: "", img: "", price: ""}}/>)
+						item={{id: this.state.newId , title: "", count: 0, img: "", price: 0}}/>)
         }
 				</div>
 			</div>
