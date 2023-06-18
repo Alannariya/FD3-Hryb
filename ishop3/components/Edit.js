@@ -29,7 +29,7 @@ class Edit extends React.Component {
 		titleError: "",
 		priceError: "",
 		countError: "",
-		isSaveDisabled: true,
+		// isSaveDisabled: true,
 		
 };
 
@@ -46,34 +46,22 @@ validForm = () => {
 
 editTitle = (eo) => {
   this.props.setDisabled();
-  this.setState({ title: eo.target.value }, () => {
-    this.validForm();
-    this.setState({ isSaveDisabled: false }); 
-  });
+  this.setState({ title: eo.target.value },this.validForm());
 };
 
 editImg = (eo) => {
   this.props.setDisabled();
-  this.setState({ img: eo.target.value }, () => {
-    this.validForm();
-    this.setState({ isSaveDisabled: false }); 
-  });
+  this.setState({ img: eo.target.value },this.validForm());
 };
 
 editPrice = (eo) => {
   this.props.setDisabled();
-  this.setState({ price: eo.target.value }, () => {
-    this.validForm();
-    this.setState({ isSaveDisabled: false }); 
-  });
+  this.setState({ price: eo.target.value },this.validForm());
 };
 
 editCount = (eo) => {
   this.props.setDisabled();
-  this.setState({ count: eo.target.value }, () => {
-    this.validForm();
-    this.setState({ isSaveDisabled: false }); 
-  });
+  this.setState({ count: eo.target.value },this.validForm());
 };
 
 saveChanges = () => {
@@ -81,8 +69,9 @@ saveChanges = () => {
 		title: this.state.title,
 		img: this.state.img,
 		price: this.state.price !== "" ? parseFloat(this.state.price) : 0,
-		count: parseFloat(this.state.count),
+		count: parseFloat(this.state.count), 
 	});
+	
 };
 
 render() {
@@ -107,7 +96,7 @@ render() {
 								<span>{this.state.countError}</span>
 						</p>
 						<input className="btn" type="button" value="Save" 
-						       disabled={this.state.isSaveDisabled} 
+						        disabled={(!!(this.state.imgError || this.state.titleError || this.state.priceError || this.state.countError||this.state.imgError==="" || this.state.titleError==="" || this.state.priceError==="" || this.state.countError===""))}
 									 onClick={this.saveChanges} />
 						<input className="btn" type="button" value="Cancel" onClick={() => this.props.changeMode()} />
 				</div>
